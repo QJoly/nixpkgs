@@ -8,20 +8,20 @@
 
 python3Packages.buildPythonApplication rec {
   pname = "vorta";
-  version = "0.8.12";
+  version = "0.9.0";
 
   src = fetchFromGitHub {
     owner = "borgbase";
     repo = "vorta";
     rev = "v${version}";
-    hash = "sha256-nLdLTh1qSKvOR2cE9HWQrIWQ9L+ynX4qF+lTtKn/Ubs=";
+    hash = "sha256-MsABU0SL6yzRFNFoG2JgDFoHsMm4QqUBvjzy6lpy4YY=";
   };
 
   nativeBuildInputs = [ wrapQtAppsHook ];
 
   propagatedBuildInputs = with python3Packages; [
     peewee
-    pyqt5
+    pyqt6
     python-dateutil
     psutil
     qdarkstyle
@@ -83,6 +83,7 @@ python3Packages.buildPythonApplication rec {
     "test_ssh_dialog"
     "test_create"
     "test_scheduler_create_backup"
+    "test_export_fail_unwritable"
   ];
 
   meta = with lib; {
@@ -90,7 +91,7 @@ python3Packages.buildPythonApplication rec {
     description = "Desktop Backup Client for Borg";
     homepage = "https://vorta.borgbase.com/";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ ma27 ];
+    maintainers = with maintainers; [ ma27 qjoly ];
     platforms = platforms.linux;
   };
 }
