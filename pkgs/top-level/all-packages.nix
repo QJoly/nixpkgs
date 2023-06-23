@@ -32349,6 +32349,8 @@ with pkgs;
 
   kubexit = callPackage ../applications/networking/cluster/kubexit { } ;
 
+  kubevpn = callPackage ../applications/networking/cluster/kubevpn { } ;
+
   kup = libsForQt5.callPackage ../applications/misc/kup { };
 
   kupfer = callPackage ../applications/misc/kupfer { };
