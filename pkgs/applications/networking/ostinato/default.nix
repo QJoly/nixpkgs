@@ -68,7 +68,7 @@ mkDerivation rec {
     description = "A packet traffic generator and analyzer";
     homepage    = "https://ostinato.org/";
     license     = licenses.gpl3Plus;
-    maintainers = with maintainers; [ rick68 ];
+    maintainers = with maintainers; [ rick68 qjoly ];
     platforms   = with platforms; linux ++ darwin ++ cygwin;
   };
 }
